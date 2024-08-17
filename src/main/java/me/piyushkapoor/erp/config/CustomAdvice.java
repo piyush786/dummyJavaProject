@@ -18,7 +18,7 @@ public class CustomAdvice {
   @ExceptionHandler(MethodArgumentNotValidException.class)
   public Map<String, String> handleException(MethodArgumentNotValidException ex) {
     var err = new HashMap<String, String>();
-   BindingResult br = ex.getBindingResult();
+    BindingResult br = ex.getBindingResult();
     List<FieldError> error = br.getFieldErrors();
 
     err.put("error",  error.get(0).getDefaultMessage());
@@ -26,6 +26,8 @@ public class CustomAdvice {
     err.put("timeStamp", LocalDateTime.now().toString());
     return err;
   }
+
+  
 
   @ExceptionHandler(Exception.class)
   public Map<String, String> handleException(Exception ex) {

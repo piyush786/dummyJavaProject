@@ -41,9 +41,12 @@ public class User extends Base {
 
   @Column(nullable = false, unique = true)
   public String email;
-
+  
   @Column(nullable = false)
   public String age;
+
+  @Column(nullable = false)
+  public String password;
 
   @OneToMany(cascade = CascadeType.ALL)
   @JoinTable(

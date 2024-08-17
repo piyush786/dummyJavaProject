@@ -2,6 +2,7 @@ package me.piyushkapoor.erp.dtos;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 public class UserDTO {
   
@@ -28,5 +29,10 @@ public class UserDTO {
   @NotBlank(message="napincodeme should not be blank or null")
   @NotNull(message="pincode should not be blank or null")
   public String pincode;
+
+  @NotBlank(message="Password should not be blank or null")
+  @NotNull(message="Password should not be blank or null")
+  @Size(min=3, max=32, message = "Password should be between 3 to 32 characters")
+  public String password;
 
 }

@@ -9,4 +9,6 @@ import me.piyushkapoor.erp.repos.models.User;
 public interface UserRepo extends JpaRepository<User, Long> {
   
   Optional<User> findByEmail(String email);
+
+  Optional<User> findById(Long id);
 }
